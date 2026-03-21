@@ -45,13 +45,11 @@ Using Active Directory Users and Computers, I created Organizational Units to or
 - Computers → CL01  
 - Users → USER01  
 
-![OU Structure](../screenshots/07-ou-structure.jpg)
+![OU Structure](../screenshots/07-ou-structure.png)
 
 This structure helps manage users and computers more efficiently.
 
 ---
-
-## Verification
 
 ## Verification
 
