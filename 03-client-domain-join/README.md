@@ -1,55 +1,74 @@
-# 03 - Client Domain Join & User Authentication
+# 03 - Successfully Joined a Windows Client to My Active Directory Domain
 
-## Overview
-
-In this step, I configured a Windows client machine and connected it to my Active Directory domain (homelab.ca). This demonstrates how client systems communicate with a Domain Controller and how users authenticate in a domain environment.
+Today I continued working on my Active Directory home lab by setting up a client machine and testing domain authentication.
 
 ---
 
-## What I Did
+## Client Configuration
 
-- Created a Windows client VM (CL01) in VirtualBox  
-- Configured network settings and set DNS to the Domain Controller (DC01)  
-- Joined the client machine to the domain:
-  homelab.ca  
-- Created Organizational Units (OUs) in Active Directory:
-  - Employees  
-  - Computers  
-  - Users  
-- Created a test user account:
-  John Smith (jsmith)  
-- Verified the client machine appeared in Active Directory after domain join  
+I created a Windows client VM (CL01) in VirtualBox and configured the network settings.
+
+- Set the DNS server to the Windows Server (DC01) IP address  
+- Ensured the client machine could communicate with the domain  
+
+This step is important because Active Directory relies on DNS for proper communication.
+
+---
+
+## Domain Join
+
+I joined the client machine to my domain:
+
+homelab.ca
+
+![Domain Join](../screenshots/05-domain-join.png)
+
+The client system was configured to join the domain (WIN11-CL01 → homelab.ca).
+
+After restarting the system, the domain join was successfully completed.
+
+![Domain Joined](../screenshots/08-domain-joined.png)
+
+The system now shows:
+- Full computer name: WIN11-CL01.homelab.ca  
+- Domain: homelab.ca  
+
+This confirms that the client is now part of the domain.
+
+---
+
+## Active Directory Structure
+
+Using Active Directory Users and Computers, I created Organizational Units to organize the environment.
+
+- Employees → John Smit  
+- Computers → CL01  
+- Users → USER01  
+
+![OU Structure](../screenshots/06-ou-structure.png)
+
+This structure helps manage users and computers more efficiently.
 
 ---
 
 ## Verification
 
-![Domain Join](../screenshots/05-domain-join.png)
-
-Client machine successfully joined to the domain (WIN11-CL01 → homelab.ca).
-
-![OU Structure](../screenshots/06-ou-structure.png)
-
-Organizational Units created to structure users and computers within Active Directory.
+After joining the client machine to the domain, the computer **WIN11-CL01** appeared in Active Directory.
 
 ![User Created](../screenshots/07-user-created.png)
 
-Test user account (John Smith) created for authentication testing.
+I also tested authentication by logging into the client machine using a domain account.
 
-![Computer Added](../screenshots/08-computer-added.png)
+Example:
+HOMELAB\USER01
 
-Client machine appears in Active Directory, confirming successful domain join.
-
----
-
-## Key Takeaways
-
-- DNS configuration is essential for domain communication  
-- Active Directory allows centralized management of users and computers  
-- Domain join enables authentication across multiple machines  
+This confirmed that:
+- The Domain Controller is working  
+- DNS is correctly configured  
+- Authentication across machines is successful  
 
 ---
 
 ## Reflection
 
-This step completed my Active Directory homelab by connecting a client system to the domain. It helped me understand how authentication works across systems in a centralized environment, similar to real enterprise infrastructure.
+It's interesting to see how user authentication works across machines in a domain environment. Slowly building this lab is helping me understand how things operate in real IT infrastructures.
