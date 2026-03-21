@@ -53,14 +53,15 @@ This structure helps manage users and computers more efficiently.
 
 ## Verification
 
+## Verification
+
 After joining the client machine to the domain, the computer **WIN11-CL01** appeared in Active Directory.
 
-![User Created](../screenshots/07-user-created.png)
+![Computer in Active Directory](../screenshots/08-computer-added.png)
 
 I also tested authentication by logging into the client machine using a domain account.
 
-Example:
-HOMELAB\USER01
+![Client Login](../screenshots/09-client-login.png)
 
 This confirmed that:
 - The Domain Controller is working  
