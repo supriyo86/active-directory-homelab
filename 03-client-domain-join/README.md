@@ -27,7 +27,7 @@ The client system was configured to join the domain (WIN11-CL01 → homelab.ca).
 
 After restarting the system, the domain join was successfully completed.
 
-![Domain Joined](../screenshots/08-domain-joined.png)
+![Domain Joined](../screenshots/06-domain-joined.png)
 
 The system now shows:
 - Full computer name: WIN11-CL01.homelab.ca  
