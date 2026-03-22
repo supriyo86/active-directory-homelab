@@ -189,17 +189,6 @@ This is a foundational Active Directory skill because group-based access control
 
 ---
 
-## Next Steps
-
-The next step in this home lab is to use these Security Groups for real access control scenarios, such as:
-
-- creating a shared network folder
-- assigning NTFS and share permissions
-- mapping a network drive for users
-- applying Group Policy Objects (GPOs)
-
----
-
 ## Skills Practiced
 
 - Active Directory Users and Computers
