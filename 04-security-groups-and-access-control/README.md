@@ -51,7 +51,7 @@ From **Server Manager**, I opened the **Tools** menu and launched **Active Direc
 
 This is the main console used to manage users, groups, computers, and Organizational Units in the domain.
 
-![Step 1 - Open ADUC](../screenshots/1.png)
+![Step 1 - Open ADUC](../screenshots/10-open-active-directory-users-and-computers.png)
 
 ---
 
@@ -68,7 +68,7 @@ At this stage, I already had several Organizational Units created, including:
 
 This structure helps keep the environment organized and reflects how departments or resources are separated in a real business network.
 
-![Step 2 - Domain Structure](../screenshots/2.png)
+![Step 2 - Domain Structure](../screenshots/11-domain-structure-overview.png)
 
 ---
 
@@ -80,7 +80,7 @@ To create a new group, I right-clicked the appropriate Organizational Unit and s
 
 For the IT department, I created the group inside the `IT` OU.
 
-![Step 3 - Create Group Menu](../screenshots/3.png)
+![Step 3 - Create Group Menu](../screenshots/12-create-new-group-menu.png)
 
 ---
 
@@ -94,7 +94,7 @@ I created a new group with the following configuration:
 
 This group is intended to represent IT-related users and can later be used to assign permissions to administrative resources.
 
-![Step 4 - IT Group Creation](../screenshots/4.png)
+![Step 4 - IT Group Creation](../screenshots/13-create-it-group.png)
 
 ---
 
@@ -110,7 +110,7 @@ Configuration used:
 
 This group will be used for standard employee accounts and can later be assigned access to shared resources such as folders or mapped drives.
 
-![Step 5 - Employees Group Creation](../screenshots/5.png)
+![Step 5 - Employees Group Creation](../screenshots/14-create-employees-group.png)
 
 ---
 
@@ -120,7 +120,7 @@ After creating the group, I confirmed that `Employees_Group` appeared inside the
 
 This shows that the Organizational Unit now contains both the user object and the Security Group used to manage that user’s future permissions.
 
-![Step 6 - Employees OU View](../screenshots/6.png)
+![Step 6 - Employees OU View](../screenshots/15-employees-ou-structure.png)
 
 ---
 
@@ -134,7 +134,7 @@ I selected:
 
 This step establishes the relationship between the user account and the group.
 
-![Step 7 - Add User to Group](../screenshots/7.png)
+![Step 7 - Add User to Group](../screenshots/16-add-user-to-group.png)
 
 ---
 
@@ -144,9 +144,9 @@ After adding the user, I confirmed that `John Smit` appears under the **Members*
 
 This verifies that the group contains the correct user.
 
-![Step 8 - Group Members Verification](../screenshots/8.png)
+![Step 8 - Group Members Verification](../screenshots/17-group-members-tab.png)
 
-![Step 8 - Group Members Verification Alternate View](../screenshots/9.png)
+![Step 8 - Group Members Verification Alternate View](../screenshots/18-group-members-confirmation.png)
 
 ---
 
@@ -163,7 +163,7 @@ I confirmed that the user belongs to:
 
 This is an important verification step because it confirms the membership from the user’s perspective.
 
-![Step 9 - User Member Of Verification](../screenshots/10.png)
+![Step 9 - User Member Of Verification](../screenshots/19-user-member-of-tab.png)
 
 ---
 
