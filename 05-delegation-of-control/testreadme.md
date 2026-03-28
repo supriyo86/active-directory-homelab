@@ -61,15 +61,6 @@ The first step was installing **Windows Server 2022** on **VirtualBox**.
 
 The issue was caused by **VirtualBox Unattended Installation**, which interfered with the setup process.
 
----
-
-## ✅ Resolution
-
-- Recreated the virtual machine  
-- Disabled unattended installation  
-- Restarted installation  
-
----
 
 ## ✔️ Result
 
