@@ -29,7 +29,7 @@ I created two security groups:
 
 I initiated the Delegation of Control Wizard on the **Employees OU**.
 
-![Step 1](../screenshots/10-delegation-start.png)
+![Step 1](../screenshots/20-delegation-start.png)
 
 ---
 
@@ -37,7 +37,7 @@ I initiated the Delegation of Control Wizard on the **Employees OU**.
 
 I selected **IT_Group** as the group to delegate permissions to.
 
-![Step 2](../screenshots/11-select-itgroup.png)
+![Step 2](../screenshots/21-select-itgroup.png)
 
 ---
 
@@ -48,7 +48,7 @@ I selected the following permissions:
 - Reset user passwords  
 - Force password change at next logon  
 
-![Step 3](../screenshots/12-permissions.png)
+![Step 3](../screenshots/22-permissions.png)
 
 ---
 
@@ -64,7 +64,7 @@ I installed **Remote Server Administration Tools (RSAT)** on the client machine 
 
 I logged into CL01 as `HOMELAB\it.admin`, opened ADUC, and attempted to reset the password for `j.smith`.
 
-![Step 4](../screenshots/13-reset-password.png)
+![Step 4](../screenshots/23-reset-password.png)
 
 ---
 
@@ -72,7 +72,7 @@ I logged into CL01 as `HOMELAB\it.admin`, opened ADUC, and attempted to reset th
 
 The password reset was successful and applied in the domain.
 
-![Step 5](../screenshots/14-success.png)
+![Step 5](../screenshots/24-success.png)
 
 ---
 
@@ -81,7 +81,9 @@ The password reset was successful and applied in the domain.
 To validate proper delegation:
 
 - Confirmed allowed actions (password reset) worked  
-- Verified restricted actions were blocked  
+- Verified restricted actions were blocked
+  
+![Step 6](../screenshots/25-success.png)
 
 ---
 
