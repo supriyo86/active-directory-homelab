@@ -1,21 +1,43 @@
 # 🧪 Active Directory Homelab (Windows Server 2022)
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Project-Active%20Directory%20Lab-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Platform-Windows%20Server%202022-0078D6?style=for-the-badge&logo=windows" />
+  <img src="https://img.shields.io/badge/Hypervisor-VirtualBox-183A61?style=for-the-badge&logo=virtualbox" />
+  <img src="https://img.shields.io/badge/Focus-IT%20Support%20%7C%20SysAdmin-green?style=for-the-badge" />
+</p>
+
+---
+
+## 📌 Project Overview
+
 This project documents my hands-on experience building an **Active Directory home lab** using **Windows Server 2022** and **VirtualBox**.
 
-The goal is to simulate a real-world IT environment and develop practical skills in:
+The lab simulates a real-world IT environment and focuses on developing practical skills in:
 
 - System administration  
 - Active Directory management  
 - User and access control  
-- Troubleshooting and problem-solving  
+- Troubleshooting  
 
 ---
 
-# 01 - Windows Server Installation & Troubleshooting
+## 🏗️ Lab Architecture
+DC01 (Domain Controller)
+│
+├── Active Directory (homelab.ca)
+├── DNS Server
+│
+└── Client Machine
+└── WIN11-CL01 (Domain Joined)
+
+---
+
+# ⚙️ 01 - Windows Server Installation & Troubleshooting
 
 ## 📖 Overview
 
-As part of building my Active Directory homelab, I began by installing **Windows Server 2022** on **Oracle VM VirtualBox**.
+The first step was installing **Windows Server 2022** on **VirtualBox**.
 
 ---
 
@@ -23,29 +45,29 @@ As part of building my Active Directory homelab, I began by installing **Windows
 
 ![License Error](../screenshots/01-license-error.png)
 
-**Figure 1:** Windows setup error — "Microsoft Software License Terms not found"
+**Figure 1:** Windows setup error — *Microsoft Software License Terms not found*
 
 ---
 
-## 🔍 Troubleshooting Process
+## 🔍 Troubleshooting
 
-- Verified BIOS virtualization settings  
-- Adjusted VM RAM and CPU  
-- Reviewed Windows security features  
+- Verified virtualization settings  
+- Adjusted VM resources (CPU, RAM)  
+- Checked Windows security features  
 
 ---
 
 ## 🧠 Root Cause
 
-**VirtualBox Unattended Installation** was enabled, which interfered with setup.
+The issue was caused by **VirtualBox Unattended Installation**, which interfered with the setup process.
 
 ---
 
 ## ✅ Resolution
 
-- Recreated VM  
+- Recreated the virtual machine  
 - Disabled unattended installation  
-- Restarted setup  
+- Restarted installation  
 
 ---
 
@@ -57,21 +79,29 @@ As part of building my Active Directory homelab, I began by installing **Windows
 
 ---
 
-# 02 - Domain Controller Setup (DC01)
+## 🧠 Key Takeaways
+
+- Not all issues are caused by corrupted files  
+- Automation can introduce unexpected errors  
+- Structured troubleshooting is essential  
+
+---
+
+# 🏢 02 - Domain Controller Setup (DC01)
 
 ## 📖 Overview
 
-Configured Windows Server as a **Domain Controller (DC01)** for centralized authentication.
+Configured the server as a **Domain Controller (DC01)** to enable centralized authentication.
 
 ---
 
 ## ⚙️ Configuration Steps
 
-- Installed AD DS  
-- Installed DNS  
+- Installed **Active Directory Domain Services (AD DS)**  
+- Installed **DNS Server**  
 - Promoted server to Domain Controller  
-- Created forest: `homelab.ca`  
-- Set DSRM password  
+- Created domain: `homelab.ca`  
+- Configured DSRM password  
 
 ---
 
@@ -79,20 +109,28 @@ Configured Windows Server as a **Domain Controller (DC01)** for centralized auth
 
 ![Domain Login](../screenshots/03-login-domain.png)
 
-**Figure 3:** Domain login successful (HOMELAB\Administrator)
+**Figure 3:** Successful domain login  
 
 ![DC Ready](../screenshots/04-dc-ready.png)
 
-**Figure 4:** AD DS and DNS roles active
+**Figure 4:** AD DS and DNS roles operational  
 
 ---
 
-# 03 - Client Setup & Domain Join
+## 🧠 Key Takeaways
+
+- Active Directory relies heavily on DNS  
+- Domain Controllers centralize authentication  
+- Always verify services after setup  
+
+---
+
+# 💻 03 - Client Setup & Domain Join
 
 ## 💻 Client Configuration
 
 - Created client VM: **WIN11-CL01**  
-- Set DNS to DC01 IP  
+- Configured DNS to point to DC01  
 - Verified connectivity  
 
 ---
@@ -101,19 +139,19 @@ Configured Windows Server as a **Domain Controller (DC01)** for centralized auth
 
 ![Domain Join](../screenshots/05-domain-join.png)
 
-**Figure 5:** Joining client to domain
+**Figure 5:** Joining client to domain  
 
 ![Domain Joined](../screenshots/06-domain-joined.png)
 
-**Figure 6:** Client successfully joined
+**Figure 6:** Domain join successful  
 
 ---
 
-## 🗂️ Active Directory Structure
+## 🗂️ Organizational Structure
 
 ![OU Structure](../screenshots/07-ou-structure.png)
 
-**Figure 7:** Organizational Units created
+**Figure 7:** Organizational Units  
 
 ---
 
@@ -121,15 +159,23 @@ Configured Windows Server as a **Domain Controller (DC01)** for centralized auth
 
 ![Computer Added](../screenshots/08-computer-added.png)
 
-**Figure 8:** Client visible in AD
+**Figure 8:** Client appears in AD  
 
 ![Client Login](../screenshots/09-client-login.png)
 
-**Figure 9:** Successful domain login from client
+**Figure 9:** Successful domain authentication  
 
 ---
 
-# 04 - Security Groups & Access Control
+## 🧠 Key Takeaways
+
+- DNS is critical for domain communication  
+- Domain join validates infrastructure  
+- Authentication confirms correct setup  
+
+---
+
+# 🔐 04 - Security Groups & Access Control
 
 ## 🎯 Objective
 
@@ -139,235 +185,172 @@ Configured Windows Server as a **Domain Controller (DC01)** for centralized auth
 
 ---
 
-## 🛠️ Step 1 - Open ADUC
+## 🛠️ Steps
 
-![Open ADUC](../screenshots/10-open-active-directory-users-and-computers.png)
+### Open ADUC
+![Step](../screenshots/10-open-active-directory-users-and-computers.png)
 
----
+### Review Domain Structure
+![Step](../screenshots/11-domain-structure-overview.png)
 
-## 🗂️ Step 2 - Review Domain Structure
+### Create Group
+![Step](../screenshots/12-create-new-group-menu.png)
 
-![Domain Structure](../screenshots/11-domain-structure-overview.png)
+### Create IT Group
+![Step](../screenshots/13-create-it-group.png)
 
----
+### Create Employees Group
+![Step](../screenshots/14-create-employees-group.png)
 
-## ➕ Step 3 - Create New Group
+### Verify OU
+![Step](../screenshots/15-employees-ou-structure.png)
 
-![Create Group Menu](../screenshots/12-create-new-group-menu.png)
+### Add User to Group
+![Step](../screenshots/16-add-user-to-group.png)
 
----
+### Verify Membership
+![Step](../screenshots/17-group-members-tab.png)
+![Step](../screenshots/18-group-members-confirmation.png)
 
-## 👨‍💻 Step 4 - Create IT Group
-
-![IT Group](../screenshots/13-create-it-group.png)
-
----
-
-## 👥 Step 5 - Create Employees Group
-
-![Employees Group](../screenshots/14-create-employees-group.png)
-
----
-
-## 📁 Step 6 - Verify OU
-
-![Employees OU](../screenshots/15-employees-ou-structure.png)
-
----
-
-## ➕ Step 7 - Add User to Group
-
-![Add User](../screenshots/16-add-user-to-group.png)
-
----
-
-## ✔️ Step 8 - Verify Group Membership
-
-![Members Tab](../screenshots/17-group-members-tab.png)
-
-![Members Confirmation](../screenshots/18-group-members-confirmation.png)
-
----
-
-## 🔍 Step 9 - Verify from User Side
-
-![User Member Of](../screenshots/19-user-member-of-tab.png)
+### Verify from User Side
+![Step](../screenshots/19-user-member-of-tab.png)
 
 ---
 
 ## ✅ Result
 
-- Created Security Groups  
-- Assigned users to groups  
-- Verified membership from both perspectives  
+- Security groups created  
+- Users assigned correctly  
+- Membership verified  
 
 ---
 
 ## 🧠 Key Takeaways
 
-- Groups simplify access management  
-- OUs keep environment organized  
-- Always verify configurations  
+- Groups simplify access control  
+- OUs improve organization  
+- Always verify membership  
 
 ---
 
-## 🧰 Skills Practiced
-
-- Active Directory Users and Computers  
-- Security Group Management  
-- User Administration  
-- Domain Management  
-- Troubleshooting  
-
----
-
-## 🚀 Future Improvements
-
-- Group Policy (GPO) implementation  
-- Shared folders & permissions  
-- Auditing & logging (security monitoring)  
-- Privilege escalation detection  
-
----
 # 🔐 05 - Delegation of Control (Password Reset)
 
 ## 📖 Overview
 
-In this step, I implemented **Delegation of Control** in my Active Directory home lab to simulate real-world IT support operations using **Role-Based Access Control (RBAC)**.
+Implemented **Delegation of Control** to simulate real-world IT support using **RBAC**.
 
 ---
 
 ## 🎯 Objective
 
-Allow a non-administrative user (**IT support role**) to reset passwords for other users **without granting Domain Admin privileges**.
+Allow IT support users to reset passwords **without full admin privileges**.
 
 ---
 
-## ⚙️ Environment Setup
+## ⚙️ Setup
 
-### 👥 Security Groups Created
+### Groups
 
 - **HR_Group**
 - **IT_Group**
 
-### 👤 User Assignment
+### Users
 
-- `John Smith` → **HR_Group**  
-- `it.admin` → **IT_Group**
-
----
-
-## 🛠️ Delegation Configuration
-
-### Step 1 — Start Delegation Wizard
-
-I initiated the **Delegation of Control Wizard** on the **Employees OU**.
-
-![Step 1](../screenshots/20-delegation-start.png)
+- `John Smith` → HR_Group  
+- `it.admin` → IT_Group  
 
 ---
 
-### Step 2 — Select IT_Group
+## 🛠️ Delegation Steps
 
-I selected **IT_Group** as the group to delegate permissions to.
+### Start Delegation Wizard
+![Step](../screenshots/20-delegation-start.png)
 
-![Step 2](../screenshots/21-select-itgroup.png)
+### Select IT_Group
+![Step](../screenshots/21-select-itgroup.png)
 
----
-
-### Step 3 — Assign Permissions
-
-I selected the following permissions:
-
-- Reset user passwords  
-- Force password change at next logon  
-
-![Step 3](../screenshots/22-permission.png)
+### Assign Permissions
+![Step](../screenshots/22-permission.png)
 
 ---
 
-## 💻 RSAT Configuration (Client Machine)
+## 💻 RSAT Setup
 
-I installed **Remote Server Administration Tools (RSAT)** on the client machine (**WIN11-CL01**) to allow remote management of Active Directory.
+Installed **RSAT** on client machine for remote administration.
 
 ---
 
 ## ✅ Verification
 
-### Step 4 — Reset Password from Client
+### Reset Password
 
-I logged into the client machine as: HOMELAB\it.admin
+Logged in as:
+HOMELAB\it.admin
 
 
-Then opened **Active Directory Users and Computers (ADUC)** and reset the password for `John Smith`.
+![Step](../screenshots/23-reset-password.png)
 
-![Step 4](../screenshots/23-reset-password.png)
-
----
-
-### Step 5 — Confirmation
-
-The password reset was successfully applied across the domain.
-
-![Step 5](../screenshots/24-success.png)
+### Confirmation
+![Step](../screenshots/24-success.png)
 
 ---
 
-## 🔍 Access Validation
+## 🔍 Validation
 
-- ✅ Allowed action → Password reset works  
-- ❌ Restricted actions → Still blocked  
-
-This confirms proper delegation without over-privileging.
+- ✅ Password reset works  
+- ❌ Other admin actions blocked  
 
 ---
 
-## 🧠 Key Concepts Demonstrated
+## 📊 Supporting Evidence
 
-- 🔐 Role-Based Access Control (RBAC)  
-- 🛡️ Principle of Least Privilege  
-- 🖥️ Remote Administration (RSAT)  
-- 🧑‍💼 IT Support Workflow Simulation  
-
----
-
-## 📊 Supporting Evidence (Group Membership)
-
-### Group Membership Verification
-
-![Members Tab](../screenshots/17-group-members-tab.png)
-
-![Members Confirmation](../screenshots/18-group-members-confirmation.png)
-
-### User Membership (Member Of Tab)
-
-![User Member Of](../screenshots/19-user-member-of-tab.png)
+![Step](../screenshots/17-group-members-tab.png)
+![Step](../screenshots/18-group-members-confirmation.png)
+![Step](../screenshots/19-user-member-of-tab.png)
 
 ---
 
-## 🧾 Result
+## 🧠 Key Concepts
 
-✔️ Delegated password reset permissions successfully  
-✔️ IT support user can perform tasks without admin rights  
-✔️ Security boundaries maintained  
+- Role-Based Access Control (RBAC)  
+- Principle of Least Privilege  
+- Remote administration (RSAT)  
 
 ---
 
-## 💡 Why This Matters
+## 🧾 Final Outcome
 
-This setup mirrors real enterprise environments where:
-
-- Helpdesk teams reset passwords  
-- Admin privileges are restricted  
-- Tasks are delegated securely  
+✔️ Delegation successfully configured  
+✔️ IT support role functional  
+✔️ Security maintained  
 
 ---
 
 ## 🚀 Next Steps
 
-- Group Policy (GPO) configuration  
-- Folder permissions & access control  
-- Auditing group membership changes  
-- Security event monitoring  
+- Group Policy (GPO)  
+- Shared folders & permissions  
+- Auditing & monitoring  
+- Security event tracking  
+
+---
+
+## 💡 Why This Project Matters
+
+This lab demonstrates real-world IT skills:
+
+- Domain setup  
+- User management  
+- Access control  
+- Troubleshooting  
+
+It reflects the responsibilities of an **IT Support / System Administrator role**.
+
+---
+
+## 👨‍💻 Author
+
+**Supriyo Talukder**  
+Aspiring IT Support / Cybersecurity Professional  
 
 ---
