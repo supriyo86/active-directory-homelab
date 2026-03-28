@@ -55,6 +55,7 @@ I selected the following permissions:
 ## RSAT Setup (Client Machine)
 
 I installed **Remote Server Administration Tools (RSAT)** on the client machine (**CL01**) to manage Active Directory remotely.
+![](../screenshots/26-RSAT-Tools.png)
 
 ---
 
@@ -86,8 +87,6 @@ To validate proper delegation:
 ![Step 6](../screenshots/25-restricted-actions.png)
 
 ---
-RSAT Tools Installing in CLIENT Machine
-![](../screenshots/26-RSAT-Tools.png)
 
 ## Key Learning
 
