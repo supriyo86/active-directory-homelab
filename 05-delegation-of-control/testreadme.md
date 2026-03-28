@@ -229,6 +229,74 @@ Configured Windows Server as a **Domain Controller (DC01)** for centralized auth
 - Privilege escalation detection  
 
 ---
+# 🔐 05 - Delegation of Control (Password Reset)
+
+## 📖 Overview
+
+In this step, I implemented **Delegation of Control** in my Active Directory home lab to simulate real-world IT support operations using **Role-Based Access Control (RBAC)**.
+
+---
+
+## 🎯 Objective
+
+Allow a non-administrative user (**IT support role**) to reset passwords for other users **without granting Domain Admin privileges**.
+
+---
+
+## ⚙️ Environment Setup
+
+### 👥 Security Groups Created
+
+- **HR_Group**
+- **IT_Group**
+
+### 👤 User Assignment
+
+- `John Smith` → **HR_Group**  
+- `it.admin` → **IT_Group**
+
+---
+
+## 🛠️ Delegation Configuration
+
+### Step 1 — Start Delegation Wizard
+
+I initiated the **Delegation of Control Wizard** on the **Employees OU**.
+
+![Step 1](../screenshots/20-delegation-start.png)
+
+---
+
+### Step 2 — Select IT_Group
+
+I selected **IT_Group** as the group to delegate permissions to.
+
+![Step 2](../screenshots/21-select-itgroup.png)
+
+---
+
+### Step 3 — Assign Permissions
+
+I selected the following permissions:
+
+- Reset user passwords  
+- Force password change at next logon  
+
+![Step 3](../screenshots/22-permission.png)
+
+---
+
+## 💻 RSAT Configuration (Client Machine)
+
+I installed **Remote Server Administration Tools (RSAT)** on the client machine (**WIN11-CL01**) to allow remote management of Active Directory.
+
+---
+
+## ✅ Verification
+
+### Step 4 — Reset Password from Client
+
+I logged into the client machine as: HOMELAB\it.admin
 
 
 Then opened **Active Directory Users and Computers (ADUC)** and reset the password for `John Smith`.
