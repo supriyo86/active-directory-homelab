@@ -229,3 +229,77 @@ Configured Windows Server as a **Domain Controller (DC01)** for centralized auth
 - Privilege escalation detection  
 
 ---
+
+
+Then opened **Active Directory Users and Computers (ADUC)** and reset the password for `John Smith`.
+
+![Step 4](../screenshots/23-reset-password.png)
+
+---
+
+### Step 5 — Confirmation
+
+The password reset was successfully applied across the domain.
+
+![Step 5](../screenshots/24-success.png)
+
+---
+
+## 🔍 Access Validation
+
+- ✅ Allowed action → Password reset works  
+- ❌ Restricted actions → Still blocked  
+
+This confirms proper delegation without over-privileging.
+
+---
+
+## 🧠 Key Concepts Demonstrated
+
+- 🔐 Role-Based Access Control (RBAC)  
+- 🛡️ Principle of Least Privilege  
+- 🖥️ Remote Administration (RSAT)  
+- 🧑‍💼 IT Support Workflow Simulation  
+
+---
+
+## 📊 Supporting Evidence (Group Membership)
+
+### Group Membership Verification
+
+![Members Tab](../screenshots/17-group-members-tab.png)
+
+![Members Confirmation](../screenshots/18-group-members-confirmation.png)
+
+### User Membership (Member Of Tab)
+
+![User Member Of](../screenshots/19-user-member-of-tab.png)
+
+---
+
+## 🧾 Result
+
+✔️ Delegated password reset permissions successfully  
+✔️ IT support user can perform tasks without admin rights  
+✔️ Security boundaries maintained  
+
+---
+
+## 💡 Why This Matters
+
+This setup mirrors real enterprise environments where:
+
+- Helpdesk teams reset passwords  
+- Admin privileges are restricted  
+- Tasks are delegated securely  
+
+---
+
+## 🚀 Next Steps
+
+- Group Policy (GPO) configuration  
+- Folder permissions & access control  
+- Auditing group membership changes  
+- Security event monitoring  
+
+---
