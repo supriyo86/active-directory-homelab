@@ -83,7 +83,7 @@ To validate proper delegation:
 - Confirmed allowed actions (password reset) worked  
 - Verified restricted actions were blocked
   
-![Step 6](../screenshots/25-success.png)
+![Step 6](../screenshots/25-restricted-actions.png)
 
 ---
 
