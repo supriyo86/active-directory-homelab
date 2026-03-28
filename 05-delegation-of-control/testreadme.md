@@ -18,10 +18,7 @@
 - [5. Client Setup & Domain Join](#5-client-setup--domain-join)
 - [6. Security Groups & Access Control](#6-security-groups--access-control)
 - [7. Delegation of Control (Password Reset)](#7-delegation-of-control-password-reset)
-- [8. Key Skills Demonstrated](#8-key-skills-demonstrated)
-- [9. Future Improvements](#9-future-improvements)
-- [10. Why This Project Matters](#10-why-this-project-matters)
-
+  
 ---
 
 ## 📌 1. Project Overview
@@ -214,32 +211,3 @@ Enable IT support to reset passwords without admin privileges.
 ![Step](../screenshots/19-user-member-of-tab.png)
 
 ---
-
-## 🧠 8. Key Skills Demonstrated
-
-- Active Directory Administration  
-- Windows Server Management  
-- DNS Configuration  
-- User & Group Management  
-- Access Control (RBAC)  
-- Troubleshooting  
-
----
-
-## 🚀 9. Future Improvements
-
-- Group Policy (GPO)  
-- Shared folders & permissions  
-- Auditing & logging  
-- Security monitoring  
-
----
-
-## 💡 10. Why This Project Matters
-
-This lab reflects real IT support responsibilities:
-
-- Domain setup  
-- Authentication  
-- Access control  
-- Troubleshooting  
