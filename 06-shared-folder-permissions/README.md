@@ -73,14 +73,13 @@ This ensures controlled access over the network.
 NTFS permissions were configured via the Security tab.
 
 ---
+Default NTFS permissions showing inherited access for Users, Administrators, SYSTEM, and CREATOR OWNER by default.
 
-📸 Screenshot: `06-ntfs-default-permissions.png`  
 ![Image](../screenshots/35-ntfs-default-permissions.png)
 
 ---
 * Attempted to remove Users group  
 
-📸 Screenshot: `10-inheritance-error.png`  
 ![Image](../screenshots/36-inheritance-error.png)
 
 👉 Unable to remove the **Users** group due to inherited permissions from the parent folder.
@@ -91,8 +90,7 @@ NTFS permissions were configured via the Security tab.
 
 * Disabled inheritance
 * Converted inherited permissions to explicit  
-
-📸 Screenshot: `07-disable-inheritance.png`  
+  
 ![Image](../screenshots/37-disable-inheritance.png)
 
 👉 After disabling inheritance and converting permissions, the **Users** group was removed successfully.
@@ -103,8 +101,7 @@ NTFS permissions were configured via the Security tab.
   * **IT_Group** → Modify  
 
 ---
-
-📸 Screenshot: `09-ntfs-final-permissions.png`  
+ 
 ![Image](../screenshots/38-ntfs-final-permissions.png)
 
 ---
@@ -156,11 +153,6 @@ Access was tested from the client machine using different user roles.
 
 * Deleted the folder successfully
 * ✔ Allowed
-
----
-
-## 📂 Screenshot Structure
-
 ---
 
 ## 🎯 Results
