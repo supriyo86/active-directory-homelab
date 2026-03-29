@@ -42,13 +42,27 @@ This folder acts as a centralized location for domain users.
 
 The folder was shared using **Advanced Sharing**.
 
+![Image](../screenshots/31-advanced-sharing.png)
+
+---
+![Image](../screenshots/32-share-default-everyone.png)
+
+
+![Image](../screenshots/34-permission-hr-group.png)
+
+---
+
+![Image](../screenshots/33-permission-it-group.png)
+
+---
+
 ### Configuration:
 
-* Removed default **Everyone** access
+* Removed default **Everyone** access  
 * Added:
 
-  * **HR_Group** → Read
-  * **IT_Group** → Full Control
+  * **HR_Group** → Read  
+  * **IT_Group** → Full Control  
 
 This ensures controlled access over the network.
 
@@ -82,8 +96,6 @@ Access was tested from the client machine using different user roles.
 
 ### 👤 HR User Test (John Smith)
 
-📸 Screenshot: `01-access-denied-hr-user.png`
-
 ![HR Access Denied](../screenshots/27-access-denied-hr-user.png)
 
 * Attempted to modify/delete content
@@ -92,10 +104,7 @@ Access was tested from the client machine using different user roles.
 ✔ Confirms read-only access for HR users
 
 ---
-
 ### 👤 IT Admin - Folder Access
-
-📸 Screenshot: `02-it-access-empty-folder.png`
 
 ![IT Empty Folder](../screenshots/28-it-access-empty-folder.png)
 
@@ -106,8 +115,6 @@ Access was tested from the client machine using different user roles.
 
 ### 📁 IT Admin - Create Folder
 
-📸 Screenshot: `03-it-create-folder.png`
-
 ![IT Create Folder](../screenshots/29-it-create-folder.png)
 
 * Created a folder inside the share
@@ -117,7 +124,6 @@ Access was tested from the client machine using different user roles.
 
 ### 🗑 IT Admin - Delete Folder
 
-📸 Screenshot: `04-it-delete-folder.png`
 
 ![IT Delete Folder](../screenshots/30-it-delete-folder.png)
 
