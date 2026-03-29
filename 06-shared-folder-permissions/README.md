@@ -70,21 +70,48 @@ This ensures controlled access over the network.
 
 ## 🔐 Step 3 - Configured NTFS Permissions
 
-NTFS permissions were configured via the **Security tab**.
+NTFS permissions were configured via the Security tab.
+
+---
+
+📸 Screenshot: `06-ntfs-default-permissions.png`  
+![Image](../screenshots/35-ntfs-default-permissions.png)
+
+---
+* Attempted to remove Users group  
+
+📸 Screenshot: `10-inheritance-error.png`  
+![Image](../screenshots/36-inheritance-error.png)
+
+👉 Unable to remove the **Users** group due to inherited permissions from the parent folder.
+
+---
 
 ### Key Actions:
 
 * Disabled inheritance
-* Converted inherited permissions to explicit
-* Removed **Users** group
+* Converted inherited permissions to explicit  
+
+📸 Screenshot: `07-disable-inheritance.png`  
+![Image](../screenshots/37-disable-inheritance.png)
+
+👉 After disabling inheritance and converting permissions, the **Users** group was removed successfully.
+
 * Added:
 
-  * **HR_Group** → Read & Execute
-  * **IT_Group** → Modify
+  * **HR_Group** → Read & Execute  
+  * **IT_Group** → Modify  
+
+---
+
+📸 Screenshot: `09-ntfs-final-permissions.png`  
+![Image](../screenshots/38-ntfs-final-permissions.png)
+
+---
 
 ### ⚠️ Important Concept
 
-> Final access is determined by the most restrictive combination of **Share and NTFS permissions**
+Final access is determined by the most restrictive combination of Share and NTFS permissions
 
 ---
 
