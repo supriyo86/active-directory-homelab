@@ -18,30 +18,23 @@ This repository documents the implementation of a centralized desktop management
 ### 1. Active Directory Setup
 I organized the domain into specific OUs to ensure the policy only affected the intended users without disrupting the entire forest.
 
+![GPO Linked to HomeLab_Objects](../screenshots/47-gpo-linked-ou.png)
+
 ### 2. UNC Pathing & Networking
 Because GPOs cannot access local `C:\` paths on remote client machines, I hosted the wallpaper on a network share:
-* **Server Path:** `\\WIN-3B10LI37PEG\LabFiles\Wallpaper.jpg`
+* **Server Path:** `\\DC01\LabFiles\Wallpaper.jpg`
+![Wallpaper UNC Path Configuration](../screenshots/48-gpo-wallpaper-path.png)
 
 ### 3. Resolving the "Black Screen" Issue (Permissions)
 The most critical part of this lab was fixing the common "Black Screen" error where the policy applies but the image fails to load. This was resolved by adjusting the **NTFS Security Permissions**:
+
+![GPO Wallpaper Setting Before Configuration](../screenshots/49-ntfs-permissions-domain-users.png)
 * **Action:** Added the `Domain Users` group to the `LabFiles` folder permissions.
 * **Result:** Client machines gained the "Read" access necessary to pull the image file during the login process.
 
 ## 📈 Final Result
 After running `gpupdate /force` on the client, the Windows 11 desktop successfully updated to the domain-enforced wallpaper.
 
+![Wallpaper Applied on Client Machine](../screenshots/50-client-wallpaper-applied.png)
+
 ---
-
-## 📸 Lab Gallery
-
-### Active Directory Structure
-![Active Directory Structure](4.png)
-*Figure 1: The GPO linked to the HomeLab_Objects OU.*
-
-### Permission Settings
-![Permission Settings](Screenshot%202026-04-04%20123112.png)
-*Figure 2: Configuring NTFS permissions for Domain Users.*
-
-### Success on Client
-![Success on Client](6.jpg)
-*Figure 3: Successful wallpaper deployment on CLIENT01.*
