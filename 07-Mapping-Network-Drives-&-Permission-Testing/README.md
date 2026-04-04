@@ -26,7 +26,7 @@ A folder named **Shared_Files** was created on the Domain Controller:
 
 `C:\Shared_Files`
 
-![Shared Folder Created](../screenshots/01-shared-folder-created.png)
+![Shared Folder Created](../screenshots/39-shared-folder-created.png)
 
 ---
 
@@ -37,7 +37,7 @@ The folder was shared with specific Active Directory groups:
 * **IT_Group → Full Control**
 * **HR_Group → Read**
 
-![Share Permissions](../screenshots/02-share-permissions.png)
+![Share Permissions](../screenshots/40-share-permissions.png)
 
 ---
 
@@ -48,7 +48,7 @@ NTFS permissions were configured to enforce RBAC:
 * **IT_Group → Modify**
 * **HR_Group → Read & Execute**
 
-![NTFS Permissions](../screenshots/03-ntfs-permissions.png)
+![NTFS Permissions](../screenshots/41-ntfs-permissions.png)
 
 ---
 
@@ -59,7 +59,7 @@ On the client machine, the shared folder was mapped as a network drive:
 * **Drive Letter:** Z:
 * **Folder Path:** `\\DC01\Shared_Files`
 
-![Map Network Drive](../screenshots/04-map-network-drive.png)
+![Map Network Drive](../screenshots/42-map-network-drive.png)
 
 ---
 
@@ -67,7 +67,7 @@ On the client machine, the shared folder was mapped as a network drive:
 
 The mapped drive appeared successfully under **This PC**:
 
-![Mapped Drive](../screenshots/05-mapped-drive.png)
+![Mapped Drive](../screenshots/43-mapped-drive.png)
 
 ---
 
@@ -79,8 +79,8 @@ Logged in as **it.admin**:
 * Modified files → ✅
 * Deleted folder → ✅
 
-![IT Admin Create](../screenshots/06-it-create.png)
-![IT Admin Delete](../screenshots/07-it-delete.png)
+![IT Admin Create](../screenshots/44-it-create.png)
+![IT Admin Delete](../screenshots/45-it-delete.png)
 
 ---
 
@@ -91,7 +91,7 @@ Logged in as **j.smith**:
 * Opened files → ✅
 * Attempted to delete → ❌ (Access Denied)
 
-![HR Access Denied](../screenshots/08-hr-access-denied.png)
+![HR Access Denied](../screenshots/46-hr-access-denied.png)
 
 ---
 
