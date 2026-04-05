@@ -41,8 +41,12 @@ The lab simulates a real-world enterprise network, focusing on:
 ## 🏗️ Lab Architecture
 
 <p align="center">
-  <img src="screenshots/lab-architecture.png" width="70%">
+  <img src="screenshots/lab-architecture.png" width="50%">
 </p>
+
+<p align="center"><b>Figure:</b> Active Directory Home Lab Architecture</p>
+
+<br>
 
 This diagram represents the overall structure of my Active Directory home lab environment built using VirtualBox.
 
@@ -54,14 +58,14 @@ This diagram represents the overall structure of my Active Directory home lab en
   - Hosts:
     - Active Directory Domain Services (AD DS)
     - DNS Server  
-  - IP Address: `192.168.1.10`  
+  - IP Address: `192.168.X.X`  
   - Responsible for authentication and domain services  
 
 - **Client Machine (CL01)**
   - Windows 10/11 virtual machine  
   - Domain-joined to `homelab.ca`  
   - Uses DC01 as its DNS server  
-  - IP Address: `192.168.1.50`  
+  - IP Address: `192.168.X.X`  
 
 - **Networking (VirtualBox NAT / Internal Network)**
   - Enables communication between machines  
