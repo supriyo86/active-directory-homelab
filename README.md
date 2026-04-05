@@ -44,6 +44,43 @@ The lab simulates a real-world enterprise network, focusing on:
   <img src="screenshots/lab-architecture.png" width="70%">
 </p>
 
+This diagram represents the overall structure of my Active Directory home lab environment built using VirtualBox.
+
+- **Oracle VM VirtualBox**
+  - Acts as the virtualization platform hosting all machines
+
+- **Domain Controller (DC01)**
+  - Runs Windows Server 2022  
+  - Hosts:
+    - Active Directory Domain Services (AD DS)
+    - DNS Server  
+  - IP Address: `192.168.1.10`  
+  - Responsible for authentication and domain services  
+
+- **Client Machine (CL01)**
+  - Windows 10/11 virtual machine  
+  - Domain-joined to `homelab.ca`  
+  - Uses DC01 as its DNS server  
+  - IP Address: `192.168.1.50`  
+
+- **Networking (VirtualBox NAT / Internal Network)**
+  - Enables communication between machines  
+  - Handles authentication, GPO, and file access  
+
+---
+
+### 🧠 Key Concept
+
+👉 The **client must point to DC01 for DNS**
+
+Without this:
+- Domain join ❌ fails  
+- Login ❌ fails  
+- GPO ❌ won’t apply  
+
+---
+
+
 | Component         | Details                    |
 | ----------------- | -------------------------- |
 | Hypervisor        | Oracle VM VirtualBox       |
