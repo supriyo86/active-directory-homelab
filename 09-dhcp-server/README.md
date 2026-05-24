@@ -1,4 +1,4 @@
-# Module 09 — DHCP Server
+# 09 — DHCP Server
 
 ## Objective
 
