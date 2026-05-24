@@ -1,4 +1,4 @@
-#  - Shared Folder & Permissions (NTFS + Share)
+#  06 - Shared Folder & Permissions (NTFS + Share)
 
 ## 📖 Overview
 
