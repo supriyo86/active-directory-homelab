@@ -23,7 +23,7 @@ Deploy and configure a DHCP server on DC01 to automatically assign IP addresses,
 On DC01, opened Server Manager → Add Roles and Features → selected **DHCP Server** role on DC01.homelab.ca.
 
 <!-- Picture 1 -->
-![Selecting DHCP Server role in Add Roles and Features Wizard](screenshots/1.png)
+![Selecting DHCP Server role in Add Roles and Features Wizard](screenshots/01-DHCP-role-selection.png)
 
 Installation completed successfully with DHCP Server and DHCP Server Tools installed.
 
