@@ -1,4 +1,4 @@
-# 04 - Delegation of Control (Password Reset)
+# 05 - Delegation of Control (Password Reset)
 
 In this step, I implemented Delegation of Control in my Active Directory home lab to simulate real-world IT support operations using role-based access control (RBAC).
 
