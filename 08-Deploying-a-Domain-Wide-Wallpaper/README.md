@@ -1,5 +1,5 @@
 
-# 🖥️ Windows Server 2022: Domain-Wide Wallpaper Deployment via GPO
+# 08 - Domain-Wide Wallpaper Deployment via GPO
 
 ## Project Overview
 This repository documents the implementation of a centralized desktop management strategy within a Windows Server 2022 environment. I successfully automated the deployment of a standardized corporate wallpaper across the `homelab.ca` domain, specifically targeting the `HomeLab_Objects` Organizational Unit (OU).
