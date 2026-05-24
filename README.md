@@ -137,14 +137,14 @@ active-directory-homelab/
 
 ---
 
-#### 🔹 [07 - Network Drive Mapping](./07-mapping-network-drives-&-permission-testing)
+#### 🔹 [07 - Network Drive Mapping](./07-Mapping-Network-Drives-&-Permission-Testing)
 - Mapped shared folder as Z: drive on CL01
 - Tested access using IT Admin and HR user accounts
 - Validated RBAC enforcement (HR: Read only, IT: Full Control)
 
 ---
 
-#### 🔹 [08 - GPO Wallpaper Deployment](./08-deploying-a-domain-wide-wallpaper)
+#### 🔹 [08 - GPO Wallpaper Deployment](./08-Deploying-a-Domain-Wide-Wallpaper)
 - Deployed domain-wide wallpaper via Group Policy
 - Used UNC path for centralized image access
 - Resolved NTFS permission black screen issue
