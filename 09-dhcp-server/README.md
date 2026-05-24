@@ -23,12 +23,12 @@ Deploy and configure a DHCP server on DC01 to automatically assign IP addresses,
 On DC01, opened Server Manager → Add Roles and Features → selected **DHCP Server** role on DC01.homelab.ca.
 
 <!-- Picture 1 -->
-![Selecting DHCP Server role in Add Roles and Features Wizard](screenshots/01-DHCP-role-selection.png)
+![Selecting DHCP Server role in Add Roles and Features Wizard](dhcp-pictures/01-DHCP-role-selection.png)
 
 Installation completed successfully with DHCP Server and DHCP Server Tools installed.
 
 <!-- Picture 3 -->
-![Installation succeeded on DC01.homelab.ca](screenshots/3.png)
+![Installation succeeded on DC01.homelab.ca](dhcp-pictures/02-Installation-succeeded.png)
 
 ---
 
@@ -37,12 +37,12 @@ Installation completed successfully with DHCP Server and DHCP Server Tools insta
 After installation, clicked **Complete DHCP configuration** to launch the post-install wizard. Used `HOMELAB\Administrator` credentials to authorise DC01 as a DHCP server in AD DS.
 
 <!-- Picture 4 -->
-![Authorising DHCP server using HOMELAB\Administrator credentials](screenshots/4.png)
+![Authorising DHCP server using HOMELAB\Administrator credentials](dhcp-pictures/03-AD-authorization-credentials.png)
 
 Both post-install steps completed successfully.
 
 <!-- Picture 5 -->
-![DHCP authorisation summary — Creating security groups Done, Authorising DHCP server Done](screenshots/5.png)
+![DHCP authorisation summary — Creating security groups Done, Authorising DHCP server Done](dhcp-pictures/04-Authorization-summary-Done.png)
 
 Restarted the DHCP service via PowerShell to apply the new security groups:
 
@@ -51,7 +51,7 @@ Restart-Service dhcpserver
 ```
 
 <!-- Picture 6 -->
-![Restarting DHCP server service via PowerShell on DC01](screenshots/6.png)
+![Restarting DHCP server service via PowerShell on DC01](dhcp-pictures/05-Restart-Service-dhcpserver.png)
 
 ---
 
@@ -60,12 +60,12 @@ Restart-Service dhcpserver
 Opened DHCP console: Server Manager → Tools → DHCP. Expanded `dc01.homelab.ca` → right-clicked **IPv4** → **New Scope**.
 
 <!-- Picture 8 -->
-![DHCP console — right-clicking IPv4 to create new scope](screenshots/8.png)
+![DHCP console — right-clicking IPv4 to create new scope](dhcp-pictures/06-dhcp-new-scope-creation.png)
 
 Named the scope `homelab-scope` with description `homelab.ca DHCP scope`.
 
 <!-- Picture 9 -->
-![New Scope Wizard — Scope Name screen](screenshots/9.png)
+![New Scope Wizard — Scope Name screen](dhcp-pictures/07-Scope-name.png)
 
 Configured the IP address range:
 
@@ -78,12 +78,12 @@ Configured the IP address range:
 > DC01's static IP (192.168.10.1) sits below the scope range so no exclusion was needed.
 
 <!-- Picture 10 -->
-![IP Address Range — 192.168.10.100 to 192.168.10.200, subnet /24](screenshots/10.png)
+![IP Address Range — 192.168.10.100 to 192.168.10.200, subnet /24](dhcp-pictures/08-IP-range-configured.png)
 
 Set lease duration to **8 days** — appropriate for stable lab VMs.
 
 <!-- Picture 11 -->
-![Lease Duration set to 8 days](screenshots/11.png)
+![Lease Duration set to 8 days](dhcp-pictures/09-Lease-duration.png)
 
 ---
 
@@ -92,7 +92,7 @@ Set lease duration to **8 days** — appropriate for stable lab VMs.
 Set **Option 003 — Router (Default Gateway)** to `192.168.10.1` (DC01).
 
 <!-- Picture 12 -->
-![Router option set to 192.168.10.1](screenshots/12.png)
+![Router option set to 192.168.10.1](dhcp-pictures/10-dhcp-default-gateway-setup.png)
 
 DNS server and domain name were auto-populated correctly:
 - **Option 006 — DNS Server:** `192.168.10.1` (DC01)
@@ -111,7 +111,7 @@ Created a fresh Windows 11 Enterprise VM (CLIENT02) in VirtualBox with the netwo
 CLIENT02 booted and received its IP automatically via DHCP with no manual configuration. Verified with `ipconfig /all`:
 
 <!-- Picture 13 -->
-![CLIENT02 ipconfig /all — DHCP Enabled Yes, IP 192.168.10.100, DHCP Server 192.168.10.1, DNS 192.168.10.1](screenshots/13.png)
+![CLIENT02 ipconfig /all — DHCP Enabled Yes, IP 192.168.10.100, DHCP Server 192.168.10.1, DNS 192.168.10.1](dhcp-pictures/11-client02-dhcp-lease-verification.png)
 
 **Confirmed:**
 - DHCP Enabled: **Yes**
@@ -125,7 +125,7 @@ CLIENT02 booted and received its IP automatically via DHCP with no manual config
 DC01's DHCP console confirms the lease was handed out to WIN11-CL02:
 
 <!-- Picture 14 -->
-![DHCP Address Leases — WIN11-CL02 assigned 192.168.10.100, expires 2026-05-31](screenshots/14.png)
+![DHCP Address Leases — WIN11-CL02 assigned 192.168.10.100, expires 2026-05-31](dhcp-pictures/12-dhcp-address-lease-win11-cl02.png)
 
 CLIENT02 was then successfully joined to the `homelab.ca` domain using `HOMELAB\Administrator` credentials, confirming that DHCP correctly delivered the DNS settings needed for domain authentication.
 
